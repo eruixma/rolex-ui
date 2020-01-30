@@ -1,29 +1,25 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import React from 'react'
 
-import A from './A';
-import Img from './Img';
-import NavBar from './NavBar';
-import HeaderLink from './HeaderLink';
-import Banner from './banner.jpg';
-import messages from './messages';
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'
+import Logo from '../Logo'
 
 function Header() {
   return (
-    <div>
-      <A href="https://www.reactboilerplate.com/">
-        <Img src={Banner} alt="react-boilerplate - Logo" />
-      </A>
-      <NavBar>
-        <HeaderLink to="/">
-          <FormattedMessage {...messages.home} />
-        </HeaderLink>
-        <HeaderLink to="/features">
-          <FormattedMessage {...messages.features} />
-        </HeaderLink>
-      </NavBar>
-    </div>
-  );
+    <AppBar position="static" style={{ background: 'black' }}>
+      <Toolbar style={{ justifyContent: 'space-between' }}>
+        <span>
+          <Logo />
+        </span>
+        <Toolbar disableGutters>
+          <AccountCircleIcon style={{ color: 'f2f2f2' }} />
+          <Typography>User</Typography>
+        </Toolbar>
+      </Toolbar>
+    </AppBar>
+  )
 }
 
-export default Header;
+export default Header
